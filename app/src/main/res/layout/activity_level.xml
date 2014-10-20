@@ -36,6 +36,7 @@
             android:onClick="showLevel1"
             android:text="Level 2"
             android:textSize="25dp"
+            android:gravity="center"
             android:background="@drawable/nice_button"
             android:textColor="#000000"
             android:fontFamily="sans-serif-thin"

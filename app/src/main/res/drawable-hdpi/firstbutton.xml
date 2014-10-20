@@ -70,7 +70,7 @@
                 android:width="1dp"
                 android:color="@color/NiceButtonBorderColor" />
             <corners
-                android:radius="30dp" />
+                android:radius="3dp" />
             <padding
                 android:left="0dp"
                 android:top="10dp"

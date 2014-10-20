@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -33,10 +34,43 @@ public class LevelActivity extends ActionBarActivity {
     public String[] ans3 = {"aircel", "airindia", "airtel", "amul", "asian paints", "bsnl", "dabur", "dlf", "eicer", "force", "hp", "icici",
             "lic", "mahindra", "micromax", "myntra.com", "nestle", "sbi", "suzuki", "tata", "telenor", "thumbsup",
             "tvs", "unilever", "videocon", "vodafon","wipro"};
+    int level;
+    String ansStrArr1[],ansStrArr2[],ansStrArr3[];
+    Button btnLevel1,btnLevel2,btnLevel3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
+        //get button by ids
+        btnLevel1=(Button) findViewById(R.id.btnLevel1);
+        btnLevel2=(Button) findViewById(R.id.btnLevel2);
+        btnLevel3=(Button) findViewById(R.id.btnLevel3);
+        //getting value from shared preferences
+        SharedPreferences sp= getSharedPreferences(getString(R.string.answer_preferences), MODE_PRIVATE);
+        String ansStr1= sp.getString("answered"+1,"");
+        String ansStr2= sp.getString("answered"+2,"");
+        String ansStr3= sp.getString("answered"+3,"");
+        //splilt every answered variables
+        try{
+            ansStrArr1 = ansStr1.split(",");
+            ansStrArr2 = ansStr2.split(",");
+            ansStrArr3 = ansStr3.split(",");
+            int lockRes=R.drawable.lock;
+            if (ansStrArr1.length<15){
+                btnLevel2.setEnabled(false);
+                btnLevel2.setPadding(30,0,60,0);
+                btnLevel2.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
+                btnLevel3.setEnabled(false);
+                btnLevel3.setPadding(30,0,60,0);
+                btnLevel3.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
+            }
+            if(ansStrArr2.length<15){
+                btnLevel3.setEnabled(false);
+                btnLevel3.setPadding(30,0,60,0);
+                btnLevel3.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
+            }
+        }
+        catch (Exception e){}
 
     }
 public void showLevel1(View v){
@@ -66,7 +100,7 @@ public void showLevel1(View v){
             Intent i3= new Intent(this,Level1Activity.class);
             Bundle b3= new Bundle();
             b3.putIntArray("question",ques3);
-            b3.putStringArray("answer",ans3);
+            b3.putStringArray("answer", ans3);
             b3.putInt("level",3);
             i3.putExtras(b3);
             startActivity(i3);
