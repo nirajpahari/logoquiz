@@ -1,0 +1,95 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#001122">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="#001122"
+    tools:context=".FirstActivity">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp">
+        <TextView
+            android:text="Logo Quiz"
+            android:textSize="60dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/NiceButtonStartColor1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:gravity="center"/>
+        </LinearLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Red"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/moon"
+            android:layout_centerHorizontal="true"
+
+            />
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textSize="50dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:onClick="startGame"
+            android:background="@drawable/nice_button"/>
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp">
+        <Button
+            android:id="@+id/btnSelectLevel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Level"
+            android:textSize="50dp"
+            android:fontFamily="sans-serif-thin"
+            android:background="@drawable/nice_button"
+            android:gravity="center"
+            android:onClick="selectLevel"/>
+    </LinearLayout>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+ android:background="@color/Red"
+    >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/sun"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView3"
+         />
+
+
+</RelativeLayout>
+    
+
+</LinearLayout>
+</ScrollView>
