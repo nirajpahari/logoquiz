@@ -26,14 +26,14 @@ public class LevelActivity extends Activity {
     public int[] ques3 = {
             R.drawable.q31, R.drawable.q32, R.drawable.q33,R.drawable.q34,R.drawable.q35,R.drawable.q36,R.drawable.q37,R.drawable.q38,R.drawable.q39,R.drawable.q310,R.drawable.q311,R.drawable.q312,
             R.drawable.q313,R.drawable.q314,R.drawable.q315,R.drawable.q316,R.drawable.q317,R.drawable.q318,R.drawable.q319,R.drawable.q320,R.drawable.q321};
-    public String[] ans3={"acc","avenuestelevision","bajaj","can","channelnepal","esewa","everestbank","hulas","kathmanduuniversity","lionsclub","megabank","nebico","nepalscout","nicasia","nokia","qfx","siddharthabank","simrikair","sprite","unilever","usaid"} ;
+    public String[] ans3={"acc","avenuestelevision","bajaj","can","channelnepal","esewa","everestbank","hulas","kathmanduuniversity","lionsclub","megabank","nebico","nepalscout","nicasia","bigfootsoftwares","qfx","siddharthabank","simrikair","sprite","unilever","usaid"} ;
     public int[] ques4 = {
             R.drawable.q41, R.drawable.q42, R.drawable.q43,R.drawable.q44,R.drawable.q45,R.drawable.q46,R.drawable.q47,R.drawable.q48,R.drawable.q49,R.drawable.q410,R.drawable.q411,R.drawable.q412,
             R.drawable.q413,R.drawable.q414,R.drawable.q415,R.drawable.q416,R.drawable.q417,R.drawable.q418,R.drawable.q419,R.drawable.q420,R.drawable.q421};
     public String[] ans4={"angan","himalaya","hyundai","janatabank","laxmibank","marutisuzuki","nbbank","nepalolympiccommittee","nmbbank","pokharauniversity","primebank","radiokantipur","rotaryclub","ruslanvodka","sagarmathatelevision","saleways","standardchartered","taan","taraair","threestarclub","yetiairlines"};
     public int[] ques5 = {
-            R.drawable.q51, R.drawable.q52, R.drawable.q53,R.drawable.q54,R.drawable.q55,R.drawable.q56,R.drawable.q57,R.drawable.q58,R.drawable.q59,R.drawable.q510};
-    public String[]ans5={"bhatbhateni","globalimebank","grandbank","hero","himalayanbank","insec","kumaribank","leapfrog","maitinepal","radionepal"};
+            R.drawable.q51, R.drawable.q52, R.drawable.q53,R.drawable.q54,R.drawable.q55,R.drawable.q56,R.drawable.q57,R.drawable.q58,R.drawable.q59,R.drawable.q510,R.drawable.q511,R.drawable.q512,R.drawable.q513,R.drawable.q514,R.drawable.q515,R.drawable.q516,R.drawable.q517,R.drawable.q518,R.drawable.q519,R.drawable.q520,R.drawable.q521};
+    public String[]ans5={"asianpaints","bhatbhateni","broadlink","can","chocofun","globalimebank","grandbank","hama","hellopaisa","hero","himalayanbank","hitsfm","insec","jagadamba","kumaribank","nds","panchakanya","radionepal","sherpa","springwood","worldlink"};
     int level;
     String ansStrArr1[],ansStrArr2[],ansStrArr3[],ansStrArr5[],ansStrArr4[];
     Button btnLevel1,btnLevel2,btnLevel3,btnLevel4,btnLevel5;

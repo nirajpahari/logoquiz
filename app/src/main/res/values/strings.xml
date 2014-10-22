@@ -11,5 +11,9 @@
     <string name="title_activity_level3">Level3Activity</string>
     <string name="title_activity_single_question">SingleQuestionActivity</string>
     <string name="answer_preferences">APREF</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="aboutgame">Identify any 17 logos in each level in order to unlock new level.</string>
+
 
 </resources>

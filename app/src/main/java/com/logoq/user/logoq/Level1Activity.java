@@ -40,15 +40,16 @@ public class Level1Activity extends Activity {
         //getting value from shared preferences
         SharedPreferences sp= getSharedPreferences(getString(R.string.answer_preferences), MODE_PRIVATE);
         ansStr= sp.getString("answered"+level,"");
-        Log.e("the answered aray for level","answered"+level);
+//        Log.e("the answered aray for level","answered"+level);
 
         gridView.setAdapter(new ImageAdapter(this, ques, level));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                String[] ansStrArr = ansStr.split(",");
                 try {
-                   String[] ansStrArr = ansStr.split(",");
+//                   String[] ansStrArr = ansStr.split(",");
 
 
                     for (int i = 0; i < (ansStrArr.length); i++) {
@@ -72,16 +73,24 @@ public class Level1Activity extends Activity {
 
                 }
                 if(p==1){
+//                    int noc=ansStrArr.length;
                     Intent intent = new Intent(getApplicationContext(), SingleQuestionActivity.class);
                     intent.putExtra("index", position);
                     intent.putExtra("ques", ques);
                     intent.putExtra("ans", ans);
                     intent.putExtra("level",level);
+                    intent.putExtra("noOfCorrect", ansStrArr.length);
                     startActivity(intent);}
 
             }
 
         });
+    }
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(getApplicationContext(),LevelActivity.class);
+        startActivity(i);
+        finish();
     }
 
 

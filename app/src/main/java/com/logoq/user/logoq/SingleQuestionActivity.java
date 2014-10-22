@@ -20,7 +20,7 @@ public class SingleQuestionActivity extends Activity {
     EditText etxtAnswer;
     int[] ques, ansd;
     String[] ans;
-    int position,level;
+    int position,level,noc;
     String plrAns;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class SingleQuestionActivity extends Activity {
             position = b.getInt("index");
             ques = b.getIntArray("ques");
             level= b.getInt("level");
+            noc=b.getInt("noOfCorrect");
 
         }
 
@@ -61,8 +62,10 @@ public class SingleQuestionActivity extends Activity {
             ed.putString("answered"+level,ansStr);
             ed.commit();
 
-
-            Toast.makeText(SingleQuestionActivity.this, "Correct Answer", Toast.LENGTH_SHORT).show();
+if(noc==17 && level!=5){
+    Toast.makeText(SingleQuestionActivity.this, "Correct Answer. You have unlocked new level", Toast.LENGTH_SHORT).show();
+}else{
+            Toast.makeText(SingleQuestionActivity.this, "Correct Answer", Toast.LENGTH_SHORT).show();}
             Intent in= new Intent(getApplicationContext(),Level1Activity.class);
             in.putExtra("index", position);
             in.putExtra("question", ques);

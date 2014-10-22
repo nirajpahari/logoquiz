@@ -26,25 +26,14 @@
             android:layout_height="wrap_content" 
             android:gravity="center"/>
         </LinearLayout>
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/Red"
-        >
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:src="@drawable/moon"
-            android:layout_centerHorizontal="true"
-
-            />
 
 
-    </RelativeLayout>
+
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="30dp"
         >
         <Button
             android:id="@+id/btnStart"
@@ -55,7 +44,7 @@
             android:textColor="#000000"
             android:fontFamily="sans-serif-thin"
             android:gravity="center"
-            android:onClick="startGame"
+            android:onClick="selectLevel"
             android:background="@drawable/firstbutton"/>
         </LinearLayout>
     <LinearLayout
@@ -67,31 +56,14 @@
             android:id="@+id/btnSelectLevel"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Level"
+            android:text="Info"
             android:textSize="50dp"
             android:textColor="#000000"
             android:fontFamily="sans-serif-thin"
             android:background="@drawable/firstbutton"
             android:gravity="center"
-            android:onClick="selectLevel"/>
+            android:onClick="showInfo"/>
     </LinearLayout>
-<RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
- android:background="@color/Red"
-    >
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/sun"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/imageView3"
-         />
-
-
-</RelativeLayout>
-    
 
 </LinearLayout>
 </ScrollView>

@@ -1,49 +1,25 @@
 package com.logoq.user.logoq;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-
-import java.util.logging.Level;
 
 
-public class FirstActivity extends Activity {
-    Button btnStart;
-//    SharedPreferences sp;
+public class AboutUsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
-        btnStart= (Button) findViewById(R.id.btnStart);
-
+        setContentView(R.layout.activity_about_us);
     }
-        public void showInfo(View v){
-
-        Intent intent = new Intent(this, AboutUsActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void selectLevel(View v){
-
-        Intent intent= new Intent(this, LevelActivity.class);
-        startActivity(intent);
-    }
-
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.first, menu);
+        getMenuInflater().inflate(R.menu.about_us, menu);
         return true;
     }
 
