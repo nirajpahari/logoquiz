@@ -1,6 +1,7 @@
 package com.logoq.user.logoq;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
@@ -14,7 +15,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 
-public class Level1Activity extends ActionBarActivity {
+public class Level1Activity extends Activity {
     GridView gridView;
     public int[] ques;
     public String[] ans;

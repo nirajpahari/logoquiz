@@ -1,5 +1,6 @@
 package com.logoq.user.logoq;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class GameActivity extends ActionBarActivity {
+public class GameActivity extends Activity {
     Button btnCheck;
     ImageView ivQues;
     EditText etxtAns;
@@ -27,8 +28,8 @@ public class GameActivity extends ActionBarActivity {
     String[] ans= {"aircel", "airindia", "airtel", "amul", "asian paints", "bsnl", "dabur", "dlf", "eicer", "force", "hp", "icici",
             "lic", "mahindra", "micromax", "myntra.com", "nestle", "sbi", "suzuki", "tata", "telenor", "thumbsup",
             "tvs", "unilever", "videocon", "vodafon","wipro"};
-    int[] ques = {R.drawable.q1, R.drawable.q2, R.drawable.q3,R.drawable.q4,R.drawable.q5,R.drawable.q6,R.drawable.q7,R.drawable.q8,R.drawable.q9,R.drawable.q10,R.drawable.q11,R.drawable.q12,
-            R.drawable.q13,R.drawable.q14,R.drawable.q15,R.drawable.q16,R.drawable.q17,R.drawable.q18,R.drawable.q19,R.drawable.q20,R.drawable.q21,R.drawable.q22,R.drawable.q23,R.drawable.q24,R.drawable.q25,R.drawable.q26,R.drawable.q27};
+    int[] ques = {R.drawable.q11, R.drawable.q12, R.drawable.q13,R.drawable.q14,R.drawable.q15,R.drawable.q16,R.drawable.q17,R.drawable.q18,R.drawable.q19,R.drawable.q110,R.drawable.q111,R.drawable.q12,
+            R.drawable.q13,R.drawable.q14,R.drawable.q15,R.drawable.q16,R.drawable.q17,R.drawable.q18,R.drawable.q19,R.drawable.q210,R.drawable.q21,R.drawable.q22,R.drawable.q23,R.drawable.q24,R.drawable.q25,R.drawable.q26,R.drawable.q27};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

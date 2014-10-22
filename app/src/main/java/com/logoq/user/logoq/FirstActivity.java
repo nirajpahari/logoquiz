@@ -1,5 +1,6 @@
 package com.logoq.user.logoq;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.logging.Level;
 
-public class FirstActivity extends ActionBarActivity {
+
+public class FirstActivity extends Activity {
     Button btnStart;
 //    SharedPreferences sp;
 
@@ -24,7 +27,7 @@ public class FirstActivity extends ActionBarActivity {
     }
         public void startGame(View v){
 
-        Intent intent = new Intent(this, GameActivity.class);
+        Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
 
     }

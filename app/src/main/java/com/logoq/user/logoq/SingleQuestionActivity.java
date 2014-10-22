@@ -1,5 +1,6 @@
 package com.logoq.user.logoq;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
@@ -13,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
-public class SingleQuestionActivity extends ActionBarActivity {
+public class SingleQuestionActivity extends Activity {
     ImageView ivSingleQuestion;
     Button btnOk;
     EditText etxtAnswer;
@@ -45,6 +46,7 @@ public class SingleQuestionActivity extends ActionBarActivity {
     }
     public void checkAns(View v) {
         plrAns = etxtAnswer.getText().toString().toLowerCase();
+        plrAns=plrAns.replace(" ","");
         if (plrAns.equals(ans[position])) {
             SharedPreferences sp= getSharedPreferences(getString(R.string.answer_preferences), MODE_PRIVATE);
             String ansStr= sp.getString("answered"+level,null);
