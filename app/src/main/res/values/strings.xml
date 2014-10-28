@@ -13,7 +13,7 @@
     <string name="answer_preferences">APREF</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_about_us">AboutUsActivity</string>
-    <string name="aboutgame">Identify any 17 logos in each level in order to unlock new level.</string>
+    <string name="aboutgame">Identify any 17 logos in each level in order to unlock new level. The logos shown are not all nepali brands, some brands that are famous in nepali market are also included.</string>
 
 
 </resources>

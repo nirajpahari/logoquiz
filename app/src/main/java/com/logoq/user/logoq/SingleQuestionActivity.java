@@ -48,7 +48,8 @@ public class SingleQuestionActivity extends Activity {
     public void checkAns(View v) {
         plrAns = etxtAnswer.getText().toString().toLowerCase();
         plrAns=plrAns.replace(" ","");
-        if (plrAns.equals(ans[position])) {
+        int dist=distance(plrAns,ans[position]);
+        if (plrAns.equals(ans[position])||(dist==1&&(plrAns.length()>=5||(dist==2&&(plrAns.length()>=15))))) {
             SharedPreferences sp= getSharedPreferences(getString(R.string.answer_preferences), MODE_PRIVATE);
             String ansStr= sp.getString("answered"+level,null);
             if (ansStr!=null){
@@ -63,9 +64,9 @@ public class SingleQuestionActivity extends Activity {
             ed.commit();
 
 if(noc==17 && level!=5){
-    Toast.makeText(SingleQuestionActivity.this, "Correct Answer. You have unlocked new level", Toast.LENGTH_SHORT).show();
+    Toast.makeText(SingleQuestionActivity.this, "Correct Answer. "+ans[position].toUpperCase()+" You have unlocked new level", Toast.LENGTH_SHORT).show();
 }else{
-            Toast.makeText(SingleQuestionActivity.this, "Correct Answer", Toast.LENGTH_SHORT).show();}
+            Toast.makeText(SingleQuestionActivity.this, "Correct Answer "+ans[position].toUpperCase(), Toast.LENGTH_SHORT).show();}
             Intent in= new Intent(getApplicationContext(),Level1Activity.class);
             in.putExtra("index", position);
             in.putExtra("question", ques);
@@ -75,25 +76,30 @@ if(noc==17 && level!=5){
             startActivity(in);
             finish();
         } else {
-            Toast.makeText(SingleQuestionActivity.this, "Wrong Answer Try Again", Toast.LENGTH_SHORT).show();
+            if((dist>=1&&dist<4&&plrAns.length()<15)||(plrAns.length()>15&&dist<7)){
+            Toast.makeText(SingleQuestionActivity.this, "You are Close!!! Try Again", Toast.LENGTH_SHORT).show();}
+            else{Toast.makeText(SingleQuestionActivity.this, "Wrong Ans.Try Again", Toast.LENGTH_SHORT).show();}
+
         }
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.single_question, menu);
-        return true;
+    public static int distance(String a, String b) {
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        // i == 0
+        int [] costs = new int [b.length() + 1];
+        for (int j = 0; j < costs.length; j++)
+            costs[j] = j;
+        for (int i = 1; i <= a.length(); i++) {
+            // j == 0; nw = lev(i - 1, j)
+            costs[0] = i;
+            int nw = i - 1;
+            for (int j = 1; j <= b.length(); j++) {
+                int cj = Math.min(1 + Math.min(costs[j], costs[j - 1]), a.charAt(i - 1) == b.charAt(j - 1) ? nw : nw + 1);
+                nw = costs[j];
+                costs[j] = cj;
+            }
+        }
+        return costs[b.length()];
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

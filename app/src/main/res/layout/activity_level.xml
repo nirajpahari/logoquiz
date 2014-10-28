@@ -15,7 +15,8 @@
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <Button
             android:id="@+id/btnLevel1"
             android:layout_width="fill_parent"
@@ -27,12 +28,22 @@
             android:onClick="showLevel1"
             android:textSize="25dp"
             android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvLevel1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"/>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="30dp">
+            android:paddingTop="10dp"
+            android:orientation="vertical">
         <Button
             android:id="@+id/btnLevel2"
             android:layout_width="fill_parent"
@@ -46,12 +57,21 @@
             android:fontFamily="sans-serif-thin"
             android:textStyle="bold"
             />
-
+            <TextView
+                android:id="@+id/tvLevel2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"/>
     </LinearLayout>
     <LinearLayout
-        android:paddingTop="30dp"
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <Button
             android:id="@+id/btnLevel3"
             android:layout_width="fill_parent"
@@ -64,12 +84,22 @@
             android:fontFamily="sans-serif-thin"
             android:textStyle="bold"
             />
+        <TextView
+            android:id="@+id/tvLevel3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"/>
 
         </LinearLayout>
 <LinearLayout
-android:paddingTop="30dp"
+android:paddingTop="10dp"
 android:layout_width="match_parent"
-android:layout_height="wrap_content">
+android:layout_height="wrap_content"
+    android:orientation="vertical">
 <Button
     android:id="@+id/btnLevel4"
     android:layout_width="fill_parent"
@@ -82,12 +112,21 @@ android:layout_height="wrap_content">
     android:fontFamily="sans-serif-thin"
     android:textStyle="bold"
     />
-
+    <TextView
+        android:id="@+id/tvLevel4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"/>
 </LinearLayout>
     <LinearLayout
-        android:paddingTop="30dp"
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <Button
             android:id="@+id/btnLevel5"
             android:layout_width="fill_parent"
@@ -100,6 +139,15 @@ android:layout_height="wrap_content">
             android:fontFamily="sans-serif-thin"
             android:textStyle="bold"
             />
+        <TextView
+            android:id="@+id/tvLevel5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"/>
 
     </LinearLayout>
 

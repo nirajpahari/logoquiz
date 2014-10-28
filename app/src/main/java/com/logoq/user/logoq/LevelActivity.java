@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -37,6 +38,7 @@ public class LevelActivity extends Activity {
     int level;
     String ansStrArr1[],ansStrArr2[],ansStrArr3[],ansStrArr5[],ansStrArr4[];
     Button btnLevel1,btnLevel2,btnLevel3,btnLevel4,btnLevel5;
+    TextView tvLevel1,tvLevel2,tvLevel3,tvLevel4,tvLevel5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,12 @@ public class LevelActivity extends Activity {
         btnLevel3=(Button) findViewById(R.id.btnLevel3);
         btnLevel4=(Button) findViewById(R.id.btnLevel4);
         btnLevel5=(Button) findViewById(R.id.btnLevel5);
+        //get textviews by it ids
+      tvLevel1=(TextView) findViewById(R.id.tvLevel1);
+        tvLevel2=(TextView) findViewById(R.id.tvLevel2);
+        tvLevel3=(TextView) findViewById(R.id.tvLevel3);
+        tvLevel4=(TextView) findViewById(R.id.tvLevel4);
+        tvLevel5=(TextView) findViewById(R.id.tvLevel5);
         //getting value from shared preferences
         SharedPreferences sp= getSharedPreferences(getString(R.string.answer_preferences), MODE_PRIVATE);
         String ansStr1= sp.getString("answered"+1,"");
@@ -54,6 +62,8 @@ public class LevelActivity extends Activity {
         String ansStr3= sp.getString("answered"+3,"");
         String ansStr4= sp.getString("answered"+4,"");
         String ansStr5= sp.getString("answered"+5,"");
+
+        int lockRes=R.drawable.lock;
         //splilt every answered variables
         try{
             ansStrArr1 = ansStr1.split(",");
@@ -61,7 +71,7 @@ public class LevelActivity extends Activity {
             ansStrArr3 = ansStr3.split(",");
             ansStrArr4 = ansStr4.split(",");
             ansStrArr5 = ansStr5.split(",");
-            int lockRes=R.drawable.lock;
+
             if (ansStrArr1.length<17){
                 btnLevel2.setEnabled(false);
                 btnLevel2.setPadding(30,0,60,0);
@@ -100,8 +110,41 @@ public class LevelActivity extends Activity {
                 btnLevel5.setPadding(30,0,60,0);
                 btnLevel5.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
                 }
+if(ansStr1.equals("")){tvLevel1.setText("0 out of 21 Logos solved");}
+            else{
+            tvLevel1.setText(ansStrArr1.length+" out of 21 Logos solved");}
+            if(ansStr2.equals("")){tvLevel2.setText("0 out of 21 Logos solved");}
+            else{
+            tvLevel2.setText(ansStrArr2.length+" out of 21 Logos solved");}
+            if(ansStr3.equals("")){tvLevel3.setText("0 out of 21 Logos solved");}
+            else{
+            tvLevel3.setText(ansStrArr3.length+" out of 21 Logos solved");}
+            if(ansStr4.equals("")){tvLevel4.setText("0 out of 21 Logos solved");}
+            else{
+            tvLevel4.setText(ansStrArr4.length+" out of 21 Logos solved");}
+            if(ansStr5.equals("")){tvLevel5.setText("0 out of 21 Logos solved");}
+            else{
+            tvLevel5.setText(ansStrArr5.length+" out of 21 Logos solved");}
         }
-        catch (Exception e){}
+        catch (Exception e){
+            btnLevel2.setEnabled(false);
+            btnLevel2.setPadding(30,0,60,0);
+            btnLevel2.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
+            btnLevel3.setEnabled(false);
+            btnLevel3.setPadding(30,0,60,0);
+            btnLevel3.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
+            btnLevel5.setEnabled(false);
+            btnLevel5.setPadding(30,0,60,0);
+            btnLevel5.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
+            btnLevel4.setEnabled(false);
+            btnLevel4.setPadding(30,0,60,0);
+            btnLevel4.setCompoundDrawablesWithIntrinsicBounds(lockRes, 0, 0, 0);
+            tvLevel1.setText(0+" out of 21 Logos solved");
+            tvLevel2.setText(0+" out of 21 Logos solved");
+            tvLevel3.setText(0+" out of 21 Logos solved");
+            tvLevel4.setText(0+" out of 21 Logos solved");
+            tvLevel5.setText(0+" out of 21 Logos solved");
+        }
 
     }
 public void showLevel1(View v){
@@ -168,22 +211,5 @@ public void showLevel1(View v){
 //        startActivity(i);
 //    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.level, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

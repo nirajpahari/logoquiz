@@ -56,7 +56,7 @@ public class Level1Activity extends Activity {
 
                         if (position == Integer.parseInt(ansStrArr[i])) {
                             p=0;
-                            Toast.makeText(getApplicationContext(),"Already Solved.Answer is : "+ans[position],Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Already Solved.Answer is : "+ans[position].toUpperCase(),Toast.LENGTH_SHORT).show();
                             Intent in= new Intent(getApplicationContext(),Level1Activity.class);
                             in.putExtra("index", position);
                             in.putExtra("question", ques);
@@ -94,22 +94,5 @@ public class Level1Activity extends Activity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.level1, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
