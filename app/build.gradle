@@ -5,8 +5,8 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "com.logoq.user.logoq"
-        minSdkVersion 13
+        applicationId "com.bigfootsoftwares.nepalilogoquiz"
+        minSdkVersion 11
         targetSdkVersion 20
         versionCode 1
         versionName "1.0"

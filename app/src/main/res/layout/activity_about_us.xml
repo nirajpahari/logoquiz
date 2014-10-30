@@ -1,5 +1,9 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#001122">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -7,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:background="#001122"
+
     tools:context="com.logoq.user.logoq.AboutUsActivity">
     <LinearLayout
         android:layout_width="fill_parent"
@@ -41,12 +45,28 @@
             android:gravity="center"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="About Us"
+            android:text="Developed By"
             android:textSize="30dp"
             android:fontFamily="sans-serif-light"
             android:textColor="@color/BlueLight"
             android:textAlignment="center"
             />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Niraj Pahari"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="nirajpahari@gmail.com"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="#ffffff"/>
         <TextView  android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Bigfoot Softwares"
@@ -59,10 +79,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/bigfootsoftwares"/>
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            />
+
+
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
