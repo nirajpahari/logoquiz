@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class SingleQuestionActivity extends Activity {
@@ -22,6 +25,7 @@ public class SingleQuestionActivity extends Activity {
     String[] ans;
     int position,level,noc;
     String plrAns;
+    ArrayList<String[]> ansList = new ArrayList<String[]>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +33,7 @@ public class SingleQuestionActivity extends Activity {
         Intent i = getIntent();
         Bundle b = i.getExtras();
         if (b!=null){
-
+            ansList = (ArrayList<String []>) b.getSerializable("answer");
             ans= b.getStringArray("ans");
             position = b.getInt("index");
             ques = b.getIntArray("ques");
@@ -37,6 +41,16 @@ public class SingleQuestionActivity extends Activity {
             noc=b.getInt("noOfCorrect");
 
         }
+        //Check
+        for (int ij=0; ij< ansList.size();ij++){
+            String temp[] = ansList.get(ij);
+
+            for (int ijk=0;ijk<temp.length;ijk++){
+                Log.e("ansList("+ij+")("+ijk+")in single question activity",""+temp[ijk]);
+            }
+
+        }
+        //
 
         etxtAnswer= (EditText) findViewById(R.id.etxtAnswer);
         btnOk = (Button) findViewById(R.id.btnOk);
@@ -48,8 +62,15 @@ public class SingleQuestionActivity extends Activity {
     public void checkAns(View v) {
         plrAns = etxtAnswer.getText().toString().toLowerCase();
         plrAns=plrAns.replace(" ","");
-        int dist=distance(plrAns,ans[position]);
-        if (plrAns.equals(ans[position])||(dist==1&&(plrAns.length()>=5||(dist==2&&(plrAns.length()>=15))))) {
+        int test=0;
+
+        for (int i=0;i<ans.length;i++) {
+            int dist=distance(plrAns,ans[i]);
+            if (plrAns.equals(ans[i]) || (dist == 1 && (plrAns.length() >= 5 || (dist == 2 && (plrAns.length() >= 15))))) {
+                test = 1;
+            }
+        }
+            if (test == 1){
             SharedPreferences sp= getSharedPreferences(getString(R.string.answer_preferences), MODE_PRIVATE);
             String ansStr= sp.getString("answered"+level,null);
             if (ansStr!=null){
@@ -64,20 +85,28 @@ public class SingleQuestionActivity extends Activity {
             ed.commit();
 
 if(noc==17 && level!=5){
-    Toast.makeText(SingleQuestionActivity.this, "Correct Answer. "+ans[position].toUpperCase()+" You have unlocked new level", Toast.LENGTH_SHORT).show();
+    Toast.makeText(SingleQuestionActivity.this, "Correct Answer. "+ans[0].toUpperCase()+" You have unlocked new level", Toast.LENGTH_SHORT).show();
 }else{
-            Toast.makeText(SingleQuestionActivity.this, "Correct Answer "+ans[position].toUpperCase(), Toast.LENGTH_SHORT).show();}
+            Toast.makeText(SingleQuestionActivity.this, "Correct Answer "+ans[0].toUpperCase(), Toast.LENGTH_SHORT).show();}
             Intent in= new Intent(getApplicationContext(),Level1Activity.class);
             in.putExtra("index", position);
             in.putExtra("question", ques);
-            in.putExtra("answer", ans);
+            in.putExtra("answer", ansList);
             in.putExtra("level",level);
             in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(in);
             finish();
         } else {
+
+                int testWrongAnswer=0;
+                for (int i=0;i<ans.length;i++) {
+                    int dist=distance(plrAns,ans[i]);
+
             if((dist>=1&&dist<4&&plrAns.length()<15)||(plrAns.length()>15&&dist<7)){
-            Toast.makeText(SingleQuestionActivity.this, "You are Close!!! Try Again", Toast.LENGTH_SHORT).show();}
+                testWrongAnswer=1;
+            }}
+            if (testWrongAnswer==1){
+                Toast.makeText(SingleQuestionActivity.this, "You are Close!!! Try Again", Toast.LENGTH_SHORT).show();}
             else{Toast.makeText(SingleQuestionActivity.this, "Wrong Ans.Try Again", Toast.LENGTH_SHORT).show();}
 
         }

@@ -58,18 +58,16 @@ public class ImageAdapter extends BaseAdapter {
         String[] ansStrArr;
         try {
         ansStrArr = ansStr.split(",");
-//        Log.e("vitra gayo??", "chk");
+
 
         for (int i = 0; i < (ansStrArr.length); i++) {
-//            Log.e("Value in adaptersplitted", ansStrArr[i]);
-//            Log.e("Position in for loop", position + "");
 
             temp = (position == Integer.parseInt(ansStrArr[i]));
-            Log.e("check boolean", temp + "");
+
             if (position == Integer.parseInt(ansStrArr[i])) {
                 imageView.setAlpha(100);
 
-                Log.e("visible bhako position", position+"");
+
             }
 //            else {
 //                imageView.setAlpha(100);
@@ -91,10 +89,6 @@ public class ImageAdapter extends BaseAdapter {
             return imageView;
         }
 
-        // Keep all Images in array
-//    public Integer[] ques = {
-//            R.drawable.q1, R.drawable.q2, R.drawable.q3,R.drawable.q4,R.drawable.q5,R.drawable.q6,R.drawable.q7,R.drawable.q8,R.drawable.q9,R.drawable.q10,R.drawable.q11,R.drawable.q12,
-//            R.drawable.q13,R.drawable.q14,R.drawable.q15,R.drawable.q16,R.drawable.q17,R.drawable.q18,R.drawable.q19,R.drawable.q20,R.drawable.q21,R.drawable.q22,R.drawable.q23,R.drawable.q24,R.drawable.q25,R.drawable.q26,R.drawable.q27
-//    };
+
 
     }
