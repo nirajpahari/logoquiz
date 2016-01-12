@@ -1,6 +1,10 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#001122">
+
+<LinearLayout     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -8,7 +12,8 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="#001122"
-    tools:context="com.logoq.user.logoq.SingleQuestionActivity">
+    tools:context="com.logoq.user.logoq.SingleQuestionActivity"
+    android:weightSum="100">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,9 +34,10 @@
         <EditText
             android:id="@+id/etxtAnswer"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="70"
-            android:textColor="#ffffff"
+            android:textColor="#0099cc"
+
 android:textSize="30dp"
             />
         <Button
@@ -50,3 +56,4 @@ android:textSize="30dp"
 
 
 </LinearLayout>
+</ScrollView>
